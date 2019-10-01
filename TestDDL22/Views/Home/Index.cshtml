@@ -1,0 +1,12 @@
+﻿@model TestDDL22.Models.IndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+
+<form>
+    <auto-dropdown data="@Model.Categories" id="ddl-category" asp-for="CategoryId"></auto-dropdown>
+    <auto-dropdown id="ddl-subcategory" asp-for="SubCategoryId"></auto-dropdown>
+</form>
+
+<autolink-dropdown provider="ddl-category" provide-for="ddl-subcategory" sub-dropdown-key="DROPDOWN_KEY_SUBCATEGORIES"></autolink-dropdown>
